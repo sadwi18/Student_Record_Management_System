@@ -2,16 +2,16 @@
 
 A file-based Student Record Management System built using C++ with binary file handling.
 
-This console-based application demonstrates how persistent data storage can be implemented without using an external database by leveraging low-level binary file operations.
+This console-based application demonstrates how persistent data storage can be implemented without relying on an external database by leveraging low-level binary file operations.
 
 ---
 
 ## 📌 Project Overview
 
-This system allows users to manage student records efficiently using structured file storage.  
-All data is stored in a binary file (`students.dat`) to ensure persistence even after program termination.
+This system allows users to manage student records efficiently using structured binary file storage.  
+All records are stored in a binary file (`students.dat`) to ensure persistence even after program termination.
 
-The application supports full CRUD operations (Create, Read, Update, Delete) with duplicate ID validation and structured modular design.
+The application supports complete CRUD operations (Create, Read, Update, Delete) with duplicate ID validation and modular project structure.
 
 ---
 
@@ -24,32 +24,38 @@ The application supports full CRUD operations (Create, Read, Update, Delete) wit
 - Delete student record
 - Duplicate ID validation before insertion
 - Persistent storage using binary files
-- Modular separation of header and implementation files
+- Modular separation of header and source files
 
 ---
 
-## 🧠 Concepts Used
+## 🧠 Concepts Implemented
 
-- Object-Oriented Programming (Class & Encapsulation)
-- Binary File Handling (`fstream`)
+- Object-Oriented Programming (OOP)
+- Class encapsulation
+- Binary file handling (`fstream`)
 - Fixed-size record storage
 - File read/write operations
 - Record modification using temporary file rewriting
 - Duplicate validation logic
-- Modular programming (.h and .cpp separation)
-- Basic data formatting using `iomanip`
+- Modular programming with header/source separation
+- Data formatting using `iomanip`
 
 ---
 
-## 🗂 File Structure
+## 🗂 Project Structure
 
 ```
-Student-Record-System/
-├── Student.h
-├── Student.cpp
-├── main.cpp
-├── README.md
-└── .gitignore
+Student_Record_Management_System/
+│
+├── include/
+│     └── Student.h
+│
+├── src/
+│     ├── Student.cpp
+│     └── main.cpp
+│
+├── .gitignore
+└── README.md
 ```
 
 ---
@@ -61,18 +67,18 @@ Student-Record-System/
   - Name
   - Department
   - CGPA
-- Records are stored in binary format for efficient access.
-- Update and delete operations are performed by rewriting records into a temporary file and replacing the original file.
+- Records are stored in binary format for structured and efficient access.
+- Update and delete operations are performed by rewriting data into a temporary file and replacing the original file.
 - Duplicate student IDs are prevented during insertion.
 
 ---
 
 ## 🛠 How to Compile
 
-Using g++:
+Since the project uses separate folders for headers and source files:
 
 ```
-g++ main.cpp Student.cpp -o student_system
+g++ src/main.cpp src/Student.cpp -I include -o student_system
 ```
 
 Run the program:
@@ -89,9 +95,9 @@ Run the program:
 
 Binary file storage ensures:
 
-- Fixed-size records for consistent structure
-- Faster read/write compared to formatted text parsing
-- Efficient memory-level storage
+- Fixed-size records
+- Faster read/write operations
+- No parsing overhead like text files
 - Structured and reliable persistent storage
 
 ---
@@ -101,25 +107,25 @@ Binary file storage ensures:
 Through this project, I strengthened my understanding of:
 
 - Persistent storage without databases
-- Data structuring using classes
-- Record manipulation through temporary file replacement
-- Separation of declaration and implementation
-- Structured modular project design
-- Practical file handling concepts in C++
+- Low-level file handling in C++
+- Record manipulation using temporary file replacement
+- Separation of declaration (`.h`) and implementation (`.cpp`)
+- Clean modular project organization
 
 ---
 
 ## 📈 Future Improvements
 
-- Sorting records (by CGPA or ID)
+- Sorting records by CGPA or ID
 - Displaying top performer
 - Statistics (average CGPA, total students)
 - Role-based login system
 - Enhanced input validation
 - Exception handling
-- Transition to database-backed system
+- Integration with a database system
 
 ---
+
 ## 📎 Note
 
-This project focuses on foundational system design principles and low-level file persistence, serving as a stepping stone toward database-driven application development.
+This project focuses on foundational system design principles and file-based persistence, serving as a stepping stone toward database-driven application development.
